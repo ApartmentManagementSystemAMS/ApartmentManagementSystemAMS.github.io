@@ -1,0 +1,203 @@
+<?php
+	include "header.php";
+?>
+<?php
+	if(isset($_POST["btnok"]))
+	{
+		
+		$title = $_POST['title'];
+		$date = $_POST['date'];
+		$complaint= $_POST['complaint'];
+
+		$cn = mysqli_connect("localhost","root","","sms_admin_db");
+		
+		$q = "INSERT INTO complain_info values (' ','$title','$date','$complaint','','')";
+		$r = mysqli_query($cn,$q);
+		if($r)
+		{
+			?>
+			<script>
+				alert('succesful');
+				
+			</script>
+			<?php
+		} 
+		else
+		{
+			?>
+			<script>
+				alert('error');
+			</script>
+			<?php
+			
+		}
+		
+	}
+   
+?>
+<section class="page-title text-center" style="background-image:url(images/background/4.jpg);">
+    <div class="container">
+        <div class="title-text">
+            <h1>about us</h1>
+            <ul class="title-menu clearfix">
+                <li>
+                    <a href="index.html">home &nbsp;/</a>
+                </li>
+                <li>about us</li>
+            </ul>
+        </div>
+    </div>
+</section>
+<!--End Page Title-->
+
+<!-- Our Story -->
+<section class="story">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-6">
+        <img loading="lazy" src="images/background/image1.jpg" class="responsive" alt="story">
+      </div>
+      <div class="col-lg-6">
+        <div class="story-content">
+          <h2>Our Aim</h2>
+          <h5 class="tagline">"	Today's the impact of technology in our lives is immeasurable and one of the greatest example of modern technology is society management system. "</p>
+            <h6>Mission</h6>
+            <p>society management system helps them to manage basic activities like set meetings and remind it to every member, allotment, maintenance & other bills management, complaint management and many other things...</p>
+            <h6>Vision</h6>
+            <p>To make work easier and smarter</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Promo Video -->
+<section class="promo-video">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="block text-center">
+          <h6>About Our Society</h6>
+          <h1>The Society <br>
+            Tour
+          </h1>
+          <a data-fancybox
+            href="https://www.youtube.com/watch?v=_sI_Ps7JSEk&amp;autoplay=1&amp;rel=0&amp;controls=0&amp;showinfo=0"><i class="fas fa-play"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="gallery bg-gray">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="section-title text-center">
+          <h3>People
+            <span>For helping us</span>
+          </h3>
+          
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-6">
+        <div class="gallery-item">
+          <img loading="lazy" src="images/gallery/plumber2.jpg" class="img-fluid" alt="gallery-image">
+          <a data-fancybox="images" href="images/gallery/plumber2.jpg"></a>
+          <h3>Plumber</h3>
+		  
+          <p>9409909409</p>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-6">
+        <div class="gallery-item">
+          <img loading="lazy" src="images/gallery/electrician.jpg" class="img-fluid" alt="gallery-image">
+          <a data-fancybox="images" href="images/gallery/electrician.jpg"></a>
+          <h3>Electrician</h3>
+          <p>9409909409</p>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-6">
+        <div class="gallery-item">
+          <img loading="lazy" src="images/gallery/sweeper.jpg" class="img-fluid" alt="gallery-image">
+          <a data-fancybox="images" href="images/gallery/sweeper.jpg"></a>
+          <h3>Sweeper</h3>
+          <p>9409909409</p>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-6">
+        <div class="gallery-item">
+          <img loading="lazy" src="images/gallery/lift.jpg" class="img-fluid" alt="gallery-image">
+          <a data-fancybox="images" href="images/gallery/lift.jpg"></a>
+          <h3>Lift Repairing</h3>
+          <p>9409909409</p>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-6">
+        <div class="gallery-item">
+          <img loading="lazy" src="images/gallery/watchman2.jpg" class="img-fluid" alt="gallery-image">
+          <a data-fancybox="images" href="images/gallery/watchman2.jpg"></a>
+          <h3>Watchman</h3>
+          <p>9409909409</p>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-6">
+        <div class="gallery-item">
+          <img loading="lazy" src="images/gallery/gasline.jpg" class="img-fluid" alt="gallery-image">
+          <a data-fancybox="images" href="images/gallery/gasline.jpg"></a>
+          <h3>Gas Line Repairing</h3>
+          <p>9409909409</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Contact Section -->
+<section class="appoinment-section section">
+  <div class="container">
+
+    <div class="row">
+      
+      <div class="col-lg-6">
+        <div class="contact-area pl-0 pl-lg-5">
+  <div class="section-title">
+    <h3>Complain
+    </h3>
+  </div>
+  
+  <form name="contact_form" class="default-form contact-form" action="#" method="post">
+    <div class="row">
+      <div class="col-md-6">
+        <div class="form-group">
+          <input class="form-control" type="text" name="title" placeholder="Title" required="">
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="form-group">
+          <input class="form-control" type="date" name="date" placeholder="Date" required="" id="datepicker" autocomplete="off">
+          
+        </div>
+      </div>
+      <div class="col-md-12">
+        <div class="form-group">
+          <textarea class="form-control" name="complaint" placeholder="Your Message" required=""></textarea>
+        </div>
+        <div class="form-group text-center">
+		<a href="#">
+          <button type="submit" class="btn-style-one" name="btnok">submit now</button>
+		  </a>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- End Contact Section -->
+<?php
+	include "footer.php";
+?>

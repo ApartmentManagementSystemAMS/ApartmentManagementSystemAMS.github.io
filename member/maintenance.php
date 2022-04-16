@@ -1,0 +1,50 @@
+<?php
+include "header.php";
+?>
+<div class="container">
+<br>
+	<h2>Maintenance Report</h2>            
+	<table class="table table-striped">
+	
+    <thead>
+      <tr>
+        <th>Date</th>
+		<th>title</th>
+		<th>type</th>
+		<th>Bill_Image</th>
+		<th>Notes</th>
+      </tr>
+    </thead>
+	<?php
+		$cn= mysqli_connect("localhost","root","","sms_admin_db");
+		$q="select * from maintenance_info";
+		
+		$r=mysqli_query($cn,$q);
+		while($row=mysqli_fetch_array($r))
+		{
+	?>
+    <tbody>
+      <tr>
+        <?php $date = $row['m_date'] ?>
+		<?php $title = $row['m_title'] ?>
+		<?php $type = $row['m_type'] ?>
+		<?php $bill_image = $row['m_bill_image'] ?>
+		<?php $notes = $row['m_notes'] ?>
+		<td><?php echo $date ?></td>
+		<td><?php echo $title ?></td>
+		<td><?php echo $type ?></td>
+		<td><img src="uploaded_img/<?php echo $bill_image?>" height=100 width=100/></td>
+		<td><?php echo $notes ?></td>
+		<td>
+
+      </tr>
+    </tbody>
+		<?php } ?>
+  </table>
+  <a href="report.php">
+	<input type="button" class="btn btn-primary btn-round" name="send" value="Download Report" width="50px"/></td>
+	</a>
+</div><br>
+<?php
+	include "footer.php";
+?>

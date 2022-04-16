@@ -1,0 +1,49 @@
+<?php
+	include "header.php";
+	$uid=$_SESSION['user_id'];
+?>
+<div class="container">
+<br>
+
+	<h2>Complaint</h2>            
+	<table class="table table-striped">
+	
+    <thead>
+      <tr>
+        <th>Title</th>
+		<th>Date</th>
+        <th>Description</th>
+		<th>Reply</th>
+		<th>Status</th>
+      </tr>
+    </thead>
+	<?php
+		$cn= mysqli_connect("localhost","root","","sms_admin_db");
+		$q="select * from complain_info where sender_id='$uid'";
+		
+		$r=mysqli_query($cn,$q);
+		while($row=mysqli_fetch_array($r))
+		{
+			$title = $row['c_title'] ;
+			$date = $row['c_date'];
+			$des = $row['c_description'] ;
+			$reply = $row['c_reply'];
+			$status = $row['c_status'];
+	?>
+    <tbody>
+      <tr>
+		<td><?php echo $title ?></td>
+        <td><i class="fas fa-calendar-alt"></i>    <?php echo $date ?></td>
+		 <td><?php echo $des ?></td>
+		<td><?php echo $reply ?></td>
+		<td><?php echo $status ?></td>
+		 
+      </tr>
+    </tbody>
+		<?php } ?>
+  </table>
+</div>
+
+<?php
+	include "footer.php";
+?>

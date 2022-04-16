@@ -1,0 +1,111 @@
+<?php
+	include "header.php";
+?>
+<?php
+	if(isset($_POST["btnok"]))
+	{
+		
+		$mdate = $_POST['mdate'];
+		$mtitle = $_POST['mtitle'];
+		$mtype= $_POST['mtype'];
+		$mimg = $_FILES['mimg']['name'];	
+		$mnotes= $_POST['mnotes'];
+
+		$cn = mysqli_connect("localhost","root","","sms_admin_db");
+		
+		$q = "INSERT INTO maintenance_info values ('','$mdate','$mtitle','$mtype','$mimg','$mnotes')";
+		$r = mysqli_query($cn,$q);
+		
+		if($r)
+		{
+			move_uploaded_file($_FILES['mimg']['tmp_name'],"uploaded_img/".$mimg);
+			?>
+			
+			<script>
+				alert('succesful');
+			</script>
+			<?php
+		} 
+		else
+		{
+			?>
+			<script>
+				alert('error');
+			</script>
+			<?php
+			
+		}
+		
+	}
+   
+?>
+
+<div class="content-wrap">
+        <div class="main">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-8 p-r-0 title-margin-right">
+                        <div class="page-header">
+                            <div class="page-title">
+                                <h1>Add Maintainance entry</h1>
+                            </div>
+                        </div>
+                    </div>                    
+                </div>
+                <!-- /# row -->
+                <section id="main-content">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="form-validation">
+                                        <form class="form-valide" action="#" method="POST" enctype="multipart/form-data">
+                                            <div class="form-group row">
+                                                <label class="col-lg-4 col-form-label" for="mdate">Date <span class="text-danger">*</span></label>
+                                                <div class="col-lg-8">
+                                                    <input type="Date" class="form-control" id="mdate" name="mdate" placeholder="Enter a name..">
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <label class="col-lg-4 col-form-label" for="mtitle">Title <span class="text-danger">*</span></label>
+                                                <div class="col-lg-8">
+                                                    <input type="text" class="form-control" id="mtitle" name="mtitle" placeholder="Your valid email..">
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <label class="col-lg-4 col-form-label" for="mtype">Type <span class="text-danger">*</span></label>
+                                                <div class="col-lg-8">
+                                                    <input type="text" class="form-control" id="mtype" name="mtype" placeholder="Choose a safe one..">
+                                                </div>
+                                            </div>                                            
+                                            <div class="form-group row">
+                                                <label class="col-lg-4 col-form-label" for="mimg">Bill Image <span class="text-danger">*</span></label>
+                                                <div class="col-lg-8">
+													<input type="file" class="form-control" name="mimg">
+                                                </div>
+                                            </div> 
+											<div class="form-group row">
+                                                <label class="col-lg-4 col-form-label" for="mnotes">Notes <span class="text-danger">*</span></label>
+                                                <div class="col-lg-8">
+                                                    <textarea class="form-control" id="mnotes" name="mnotes" rows="5" placeholder="What would you like to see?"></textarea>
+                                                </div>
+                                            </div>
+                                            
+                                                                            
+                                            <div class="form-group row">
+                                                <div class="col-lg-8 ml-auto">
+                                                    <input type="submit" name="btnok" class="btn btn-primary" value="add" />
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </section>
+            
+<?php
+	include "footer.php"
+?>

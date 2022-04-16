@@ -1,0 +1,68 @@
+<?php 
+include "header.php";
+?>
+    <div class="content-wrap">
+        <div class="main"
+            <div class="container-fluid">
+                
+                <!-- /# row -->
+					<section id="main-content">
+                    <section id="main-content">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="card">
+                                <div class="card-title">
+                                    <h4> feedback Report </h4>
+                                    <a style="float:right; color:blue" href="addWingAdmin.php">Add Wing Admin </a>
+                                </div>
+                                <div class="bootstrap-data-table-panel">
+                                    <div class="table-responsive">
+                                        <table id="row-select" class="display table table-borderd table-hover">
+
+                                            <thead>
+                                                <tr>
+                                                    <th>ID</th>		
+													<th>Name</th>
+                                                    <th>email</th>
+													<th>subject</th>
+													<th>description</th>
+													<th>Action</th>
+                                                </tr>
+                                            </thead>
+
+                                            <tbody>
+                                                <tr>
+                                                    <td>1</td>
+                                                    <td>abc</td>
+													<td>abc@gmail.com</td>
+													<td>cleanliness</td>
+													<td>compound is neet and clean.</td>
+													<td>delete</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>2</td>
+                                                    <td>xyz</td>
+													<td>xyz@gmail.com</td>
+													<td>Rules and regulation</td>
+													<td>rules are really great.</td>
+													<td>delete</td>													                                                    
+                                                </tr>                                                                                      
+                                            </tbody>                                            
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- /# card -->
+                        </div>
+                        <!-- /# column -->
+                    </div>
+                    <!-- /# row -->
+
+                    
+                </section>
+					<?php
+include "footer.php";
+?>
+
+
+                    

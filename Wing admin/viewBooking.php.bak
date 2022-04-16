@@ -1,0 +1,68 @@
+<?php 
+include "header.php";
+?>
+    <div class="content-wrap">
+        <div class="main"
+            <div class="container-fluid">
+                
+                <!-- /# row -->
+					<section id="main-content">
+                    <section id="main-content">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="card">
+                                <div class="card-title">
+                                    <h4> Booking List </h4>
+                                    <a style="float:right; color:blue" href="addWingAdmin.php">Add Wing Admin </a>
+                                </div>
+                                <div class="bootstrap-data-table-panel">
+                                    <div class="table-responsive">
+                                        <table id="row-select" class="display table table-borderd table-hover">
+
+                                            <thead>
+                                                <tr>
+                                                    <th>ID</th>	
+													<th>Name</th>
+                                                    <th>Date</th>
+													<th>Duration</th>
+													<th>occation</th>
+													<th>Action</th>													
+                                                </tr>
+                                            </thead>
+
+                                            <tbody>
+                                                <tr>
+                                                    <td>1</td>
+													<td>abc</td>
+													<td>2/1/2022</td>
+                                                    <td>6:00 PM to 4:00 AM</td>
+													<td>Birthday Party</td>
+													<td>edit/delete</td>													
+                                                </tr>
+                                                <tr>
+                                                    <td>2</td>
+													<td>def</td>
+													<td>31/1/2022</td>
+                                                    <td>6:00 PM to 12:00 AM<</td>
+													<td>Family gathering</td>
+													<td>edit/delete</td>													                                                    
+                                                </tr>                                                                                      
+                                            </tbody>                                            
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- /# card -->
+                        </div>
+                        <!-- /# column -->
+                    </div>
+                    <!-- /# row -->
+
+                    
+                </section>
+					<?php
+include "footer.php";
+?>
+
+
+                    

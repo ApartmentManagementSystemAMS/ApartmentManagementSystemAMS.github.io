@@ -1,0 +1,62 @@
+<?php 
+include "header.php";
+?>
+    <div class="content-wrap">
+        <div class="main"
+            <div class="container-fluid">
+                
+                <!-- /# row -->
+					<section id="main-content">
+                    <section id="main-content">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="card">
+                                <div class="card-title">
+                                    <h4>rules listing </h4>
+									<a style="float:right; color:blue" href="addRules.php">Add New rules </a>
+                                    
+                                </div>
+                                <div class="bootstrap-data-table-panel">
+                                    <div class="table-responsive">
+                                        <table id="row-select" class="display table table-borderd table-hover">
+                                            <thead>
+                                                <tr>
+                                                    <th>ID</th>
+													<th>Title</th>
+                                                    <th>Description</th>
+													<th>Action</th>
+                                                </tr>
+                                            </thead>
+
+                                            <tbody>
+                                                <tr>
+                                                    <td>1</td>
+													<td>Cleanliness</td>
+                                                    <td>A residant should be ensure that they maintain cleanliness in comman areas.</td>
+													<td>edit/delete</td>
+												</tr>
+                                                <tr>
+                                                    <td>2</td>
+													<td>covid-19 guidelines</td>
+                                                    <td>Sanitize your hand before entering the Complex.</td>
+													<td>edit/delete</td>                                                    
+                                                </tr>                                                                                      
+                                            </tbody>                                            
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- /# card -->
+                        </div>
+                        <!-- /# column -->
+                    </div>
+                    <!-- /# row -->
+
+                    
+                </section>
+					<?php
+include "footer.php";
+?>
+
+
+                    
